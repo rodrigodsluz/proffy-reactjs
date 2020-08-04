@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import logoImg from '../../assets/images/logo.svg'
 import landingImg from '../../assets/images/landing.svg'
@@ -25,15 +26,15 @@ const Landing = () => {
         />
 
         <div className="buttons-container">
-          <a href="" className="study">
+          <Link to="/study" className="study">
             <img src={studyIcon} alt="study"/>
             Study
-          </a>
+          </Link>
 
-          <a href={giveClassesIcon} className="give-classes">
+          <Link to="/give-classes" className="give-classes">
             <img src={giveClassesIcon} alt="Give classes"/>
             Give classes
-          </a>
+          </Link>
         </div>
 
         <span className="total-connections">
