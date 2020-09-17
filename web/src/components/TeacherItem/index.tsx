@@ -28,7 +28,7 @@ const TeacherItem = () => {
         </p>
         <button type="button">
           <img src={whatsappIcon} alt="Whatsapp"/>
-          Get in touch
+          Get in touch 
         </button>
       </footer>
     </article>
