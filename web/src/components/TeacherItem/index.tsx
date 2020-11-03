@@ -1,38 +1,64 @@
-import React from 'react'
+import React from 'react';
 
-import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
+import './styles.css';
 
-import './styles.css'
+import whastappIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
 
-const TeacherItem = () => {
+export interface Teacher {
+  avatar: string;
+  bio: string;
+  cost: number;
+  id: number;
+  name: string;
+  subject: string;
+  whatsapp: number;
+}
+
+interface TeacherItemProps {
+  teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }: TeacherItemProps) => {
+  function createNewConnection() {
+    api.post('connections', { 
+      user_id: teacher.id, 
+    });
+  }
+  
   return (
     <article className="teacher-item">
       <header>
-        <img src="https://avatars2.githubusercontent.com/u/52974568?s=460&u=1160314eec540c568cc199c88a708a66e9ae9bbf&v=4" alt="Rodrigo Duarte"/>
+        <img src={teacher.avatar} alt={teacher.name} />
         <div>
-          <strong>Rodrigo Duarte</strong>
-          <span>Physics</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
-
       <p>
-        Human being from Earth
-        <br/> <br/>
-        Rodrigo is a human being living in a planet called Earth located in the Solar System that's is located in the Milky Way
+        {teacher.bio}
       </p>
-
       <footer>
         <p>
-          Price/time
-          <strong>U$ 80,00</strong>
+          Preço/hora
+          <strong>
+            R$
+            {teacher.cost}
+          </strong>
         </p>
-        <button type="button">
-          <img src={whatsappIcon} alt="Whatsapp"/>
-          Get in touch 
-        </button>
+        <a 
+          rel="noopener noreferrer"
+          target="_blank" 
+          onClick={createNewConnection} 
+          href={`https://wa.me/${teacher.whatsapp}`} 
+          type="button"
+        >
+          <img src={whastappIcon} alt="Whatsapp" />
+          Entrar em contato
+        </a>
       </footer>
     </article>
-  )
+  );
 }
 
-export default TeacherItem
+export default TeacherItem;
