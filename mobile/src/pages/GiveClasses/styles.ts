@@ -1,22 +1,49 @@
-import React from 'react';
-import { View, ImageBackground, Text } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet } from "react-native";
 
-import styles from './styles';
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#8257e5',
+    justifyContent: 'center',
+    padding: 40,
+  },
 
-import giveCLassesBgImage from '../../assets/images/give-classes-background.png';
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+  },
 
-function GiveClasses() {
-  const { goBack } = useNavigation();
+  title: {
+    fontFamily: 'Archivo_700Bold',
+    color: '#FFF',
+    fontSize: 32,
+    lineHeight: 37,
+    maxWidth: 180,
+  },
 
-  function handleNavigateBack() {
-    goBack();
-  }
+  description: {
+    marginTop: 24,
+    color: '#d4c2ff',
+    fontSize: 16,
+    lineHeight: 26,
+    fontFamily: 'Poppins_400Regular',
+    maxWidth: 240,
+  },
 
-  return (
-    <View style={styles.container}>
-      <ImageBackground
-        resizeMode=}
+  okButton: {
+    marginVertical: 40,
+    backgroundColor: '#04d361',
+    height: 58,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 8,
+  },
 
-export default GiveClasses;
+  okButtonText: {
+    color: '#FFF',
+    fontSize: 16,
+    fontFamily: 'Archivo_700Bold'
+  },
+});
+
+export default styles;
