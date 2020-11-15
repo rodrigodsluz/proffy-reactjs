@@ -15,7 +15,7 @@
 
 </p>
 
-> :rocket: Project made to connect teachers to students.
+> :rocket: Full responsive project made to connect teachers to students.
 
 <div align="center">
   <sub>Proffy project. Built with ❤︎ by
